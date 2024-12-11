@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cookie&family=Dancing+Script:wght@400..700&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Protest+Riot&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 main{
     width:600px;
-    height:750px;
+    height:790px;
     margin:0 auto;
     border:1px solid black;
     padding:30px;
@@ -11,6 +12,9 @@ main{
 }
 #introduction{
     position: relative;
+}
+#career{
+    font-family: 'Lobster Two',sans-serif;
 }
 #introduction::before{
     content:' ';
@@ -23,16 +27,24 @@ main{
 }
 #address{
     line-height: 5px;
+    font-family: "Open Sans",sans-serif;
+    font-size:small;
 }
 h1{
+    font-family:"Oswald";
+    font-weight:lighter;
     text-decoration: underline;
 }
 h4{
-    color:rgb(78, 78, 78);
+    font-family:"Open Sans";
+    
+    font-weight:400;
     text-decoration: underline;
 }
 #skills,#education,#experience{
     margin-bottom:-5px;
+    font-family:'Roboto Condensed';
+    font-weight: 300;
 }
 #university ul,#highschool ul{
     line-height: 20px; 
@@ -40,7 +52,6 @@ h4{
     margin-top:-5px;
     list-style: none;
 }
-
 #freelancing ul{
     list-style: none;
     text-indent: -10px;
@@ -50,7 +61,6 @@ h4{
     bottom:10px;
     text-indent: 10px;
 }
-
 #university h4,#highschool h4,#freelancing h4{
     margin-bottom:-7.5px;
 }
@@ -61,6 +71,8 @@ h4{
 a{
     color:black;
     text-decoration: underline;
+    font-family:'Roboto Condensed';
+    font-weight:300;
 }
 #header1,#header2,#header3,#header4{
     margin-bottom:-5px;
