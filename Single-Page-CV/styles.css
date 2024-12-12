@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cookie&family=Dancing+Script:wght@400..700&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Protest+Riot&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cookie&family=Dancing+Script:wght@400..700&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Protest+Riot&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 main{
     width:600px;
     height:750px;
@@ -15,10 +15,11 @@ main{
 }
 #career{
     font-family: 'Lobster Two',sans-serif;
+    color:green;
 }
 #introduction::before{
     content:' ';
-    width:100%;
+    width:75%;
     height:1px;
     background-color: black;
     position: absolute;
@@ -39,11 +40,15 @@ h4{
     font-family:"Roboto Condensed";
     font-weight: 350;
     text-decoration: underline;
+    color:green;
 }
 #skills,#education,#experience{
     margin-bottom:-5px;
     font-family:'Roboto Condensed';
     font-weight: 300;
+}
+#header5,#header6,#header7{
+    color:rgba(28, 143, 250, 0.753);
 }
 #university ul,#highschool ul{
     line-height: 20px; 
