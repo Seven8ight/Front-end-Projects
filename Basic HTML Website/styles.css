@@ -109,3 +109,42 @@ footer{
     text-align: center;
     font-family: 'Lobster Two',sans-serif;
 }
+/* Media responsive */
+@media(max-width:768px){
+    form label{
+        left:185px;
+    }
+    
+    #about{
+        font-size: 13px;
+        position: relative;
+        left:45px;
+        width:600px;
+    }
+    #about::after{
+        left:150px;
+    }
+}
+@media (max-width:600px){
+    header h1{
+        font-size:20px;
+    }
+    nav ul{
+        top:8px;
+        font-size:14px;
+    }
+    #text{
+        font-size:15px;
+    }
+    #about::after{
+        left:120px;
+    }
+    form label{
+        left:140px;
+    }
+    #about{
+        width:540px;
+        font-size:12px;
+    }
+    
+}
