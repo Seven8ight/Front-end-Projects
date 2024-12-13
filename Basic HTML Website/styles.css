@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cookie&family=Dancing+Script:wght@400..700&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Protest+Riot&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+header{
+    display: flex;
+    justify-content: space-between;
+    width:85%;
+    margin:0 auto;
+    position: relative;
+}
+header::after,#about::after{
+    content: ' ';
+    width:100%;
+    height:1px;
+    background-color: black;
+    position: absolute;
+    bottom:5px;
+}
+header h1{
+    font-family:'Cookie',sans-serif;
+    font-weight: lighter;
+    position: relative;
+    top:5px;
+}
+nav ul{
+    display:flex;
+    list-style: none;
+    width:300px;
+    justify-content: space-around;
+    position: relative;
+    top:19.5px;
+}
+nav ul li a{
+    color:black;
+    text-decoration: none;
+    font-family:"Roboto Condensed",sans-serif;
+}
+#home{
+    height:89.5vh;
+}
+#text{
+    margin:0 auto;
+    text-align: center;
+    position: relative;
+    top:275px;
+}
+#text h1,#about-header,#contact h1{
+    font-family:"Dancing Script";
+    text-decoration: underline;
+}
+#text p{
+    font-family:"Noto Sans";
+    line-height: 25px;
+}
+/* About page */
+#about{
+    display: flex;
+    height: 50vh;
+    justify-content: space-around;
+    position: relative;
+    top:20px;
+    font-family:'Noto Sans',sans-serif;
+    line-height: 35px;
+}
+#about::after{
+    transform: rotate(90deg);
+    width:260px;
+    top:130px;
+}
+#about-header{
+    text-align: center;
+}
+/* Contact */
+#contact{
+    text-align: center;
+    height:40vh;
+}
+#contact p{
+    font-family:'Roboto Condensed',sans-serif;
+}
+form{
+    width:300px;
+    height:auto;
+    margin:0 auto;
+    line-height: 80px;
+}
+form label{
+    position: absolute;
+    left:565px;
+    font-family:'Roboto Condensed',sans-serif;
+}
+form input,form textarea{
+    width:200px;
+}
+form input{
+    border:none;
+    border-bottom: 1px solid black;
+}
+form button{
+    background:transparent;
+    border:none;
+    font-family:Oswald;
+    font-weight:lighter;
+    font-size:17.5px;
+}
+form button:hover{
+    cursor:pointer;
+}
+footer{
+    border-top:1px solid black;
+    text-align: center;
+    font-family: 'Lobster Two',sans-serif;
+}
