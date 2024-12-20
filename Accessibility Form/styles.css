@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Asap:ital,wght@0,100..900;1,100..900&family=Cookie&family=Dancing+Script:wght@400..700&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Protest+Riot&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    background:linear-gradient(#f89999,#f6c0ba);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+form{
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding:10px;
+    width:450px;
+    margin:0 auto;
+    position: relative;
+    top:50px;
+}
+form header h1{
+    text-align: center;
+    text-decoration: underline;
+    font:lighter 20px Oswald;
+}
+form label{
+    font: lighter 15px "Asap";
+}
+form input{
+    margin-left: 75px;
+    border:none;
+    background:transparent;
+    border-bottom:1px solid black;
+    width:350px;
+    text-align: center;
+    font:300 14px "Roboto Condensed";
+    color:black;
+} 
+form input::placeholder{
+    color: rgb(0,0,0,.5);
+}
+form input:focus{
+    border:2px solid black;
+    border-radius: 5px;
+    outline: none;
+}
+form p{
+    font:lighter 10px "Asap"; 
+}
+#eye{
+    position: absolute;
+    right:30px;
+    background:transparent;
+    border:none;
+}
+#unequal{
+    text-align: center;
+    color: red;
+    font:600 10px "Roboto Condensed";
+}
+button[type="submit"]{
+    background:transparent;
+    border:none;
+    font:lighter 17px "Cookie";
+    text-align: center;
+    display: block;
+    margin:0 auto;
+}
+button[type="submit"]:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+#profile-completion{
+    border:1px solid black;
+    border-radius: 50%;
+    width:200px;
+    height:200px;
+    text-align: center;
+    margin:0 auto;
+    margin-top: 10px;
+}
+#profile-completion div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width:160px;
+    height:160px;
+    margin:0 auto;
+    position: relative;
+    top:20px;
+    border-radius: 50%;
+    background: rgba(244,244,244,.5);
+}
+#checklist{
+    width:40%;
+    height:115px;
+    margin:0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    border:1px solid black;
+    border-radius:10px;
+}

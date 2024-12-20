@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="Accessibility Form"/>
+    <meta property="og:description" content="A static UI form interface focused on accessibility"/>
+    <meta property="og:author" content="Lawrence Muchiri"/>
+    <meta property="og:viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <script src="https://kit.fontawesome.com/9e14e23008.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css"/>
+    <title>Accessibility Form</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <header>
+            <h1>Registeration</h1>
+        </header>
+        <div>
+            <label for="name">Full Name:</label>
+            <br/>
+            <input required type="text" id="name" aria-label="name" placeholder="Enter full name" aria-placeholder="Enter full name" aria-required="true"/>
+        </div>
+        <br/>
+        <div>
+            <label for="email">Email:</label>
+            <br/>
+            <input type="email" id="email" placeholder="Enter email" aria-placeholder="Enter email" aria-label="email" aria-required="true" aria-invalid="true" required/>
+        </div>
+        <br/>
+        <div>
+            <label for="password">Password:</label>
+            <br/>
+            <input required placeholder="Enter password" aria-placeholder="Enter password" type="password" aria-required="true" aria-invalid="true"/>
+            <button id="eye" type="button" aria-label="password-hiddens" aria-pressed="true">
+                <i class="fa-sharp fa-solid fa-eye"></i>
+            </button>
+        </div>
+        <br/>
+        <div>
+            <label for="confirmation">Confirm Password:</label>
+            <br/>
+            <input id="confirmation" placeholder="Confirm password" aria-placeholder="Confirm password" type="password" aria-required="true" aria-invalid="true" aria-describedby="unequal"/>
+            <button id="eye" type="button" aria-label="password-hidden" aria-pressed="false">
+                <i class="fa-sharp fa-solid fa-eye"></i>
+            </button>
+            <p id="unequal" role="alert">Password doesn't match the original password</p>
+        </div>
+        <br/>
+        <div id="profile-completion">
+            <div>
+                <p>Profile Completion</p>
+                <p>65%</p>
+            </div>
+        </div>
+        <div id="checklist">
+            <p><s>Create Account</s></p>
+            <p><s>Update Roadmap Progress</s></p>
+            <p>Setup Public Profile</p>
+            <p>Complete your first project</p>
+            <p>Invite your friends</p>
+        </div>
+        <button type="submit">Update Profile</button>
+    </form>
+</body>
+</html>
