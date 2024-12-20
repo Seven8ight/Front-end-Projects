@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Asap:ital,wght@0,100..900;1,100..900&family=Cookie&family=Dancing+Script:wght@400..700&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Protest+Riot&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+#placeholder{
+    position: relative;
+    top:350px;
+    text-align: center;
+}
+#placeholder i{
+    position: absolute;
+    right:625px;
+    top:6.3px;
+}
+#placeholder input{
+    height:15px;
+    padding:5px;
+    text-align: center;
+    font:lighter 15px "Dancing Script";
+    border:none;
+    border-bottom:1px solid black;
+}
+#placeholder input:focus{
+    outline: none;
+}
+/* UI interface */
+#ui{
+    margin:0 auto;
+    border:1px solid black;
+    width:13%;
+    height:190px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+#months{
+    display: flex;
+    justify-content: center;
+    font:lighter 10px "Noto sans";
+    width:50%;
+    height:25px;
+    margin:0 auto;
+    justify-content: space-between;
+    align-content: center;
+}
+#months span{
+    position: relative;
+    top:10px;
+}
+#months span:hover{
+    cursor: pointer;
+}
+#days{
+    margin:0 auto;
+    position: relative;
+    right:2.5px;
+    width:100%;
+    justify-content: space-between;
+}
+#dates{
+    margin:0 auto;
+    width:90%;
+    height:110px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#dates button{
+    padding-left: 10px;
+    width:22.5px;
+}
+hr{
+    width:90%;
+    height:1px;
+    background-color: black;
+    border:none;
+}
+button{
+    border:none;
+    font:lighter 10px "Asap";
+    background-color: transparent;
+    text-align: center;
+}
+button:hover{
+    cursor: pointer;
+}
+#current{
+    text-decoration:underline ;
+    border-radius: 5px;
+}
