@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Lawrence Muchiri"/>
+    <meta name="description" content="An Static Accessibility UI form"/>
 
     <meta property="og:title" content="Accessibility Form"/>
     <meta property="og:description" content="A static UI form interface focused on accessibility"/>
@@ -34,7 +36,7 @@
             <label for="password">Password:</label>
             <br/>
             <input required placeholder="Enter password" aria-placeholder="Enter password" type="password" aria-required="true" aria-invalid="true"/>
-            <button id="eye" type="button" aria-label="password-hiddens" aria-pressed="true">
+            <button id="eye" class="eye-1" type="button" aria-label="password-hiddens" aria-pressed="true">
                 <i class="fa-sharp fa-solid fa-eye"></i>
             </button>
         </div>
@@ -43,7 +45,7 @@
             <label for="confirmation">Confirm Password:</label>
             <br/>
             <input id="confirmation" placeholder="Confirm password" aria-placeholder="Confirm password" type="password" aria-required="true" aria-invalid="true" aria-describedby="unequal"/>
-            <button id="eye" type="button" aria-label="password-hidden" aria-pressed="false">
+            <button id="eye" class="eye-2" type="button" aria-label="password-hidden" aria-pressed="false">
                 <i class="fa-sharp fa-solid fa-eye"></i>
             </button>
             <p id="unequal" role="alert">Password doesn't match the original password</p>
