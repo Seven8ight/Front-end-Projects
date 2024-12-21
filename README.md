@@ -6,4 +6,5 @@ URL for fourth project is https://roadmap.sh/projects/changelog-component
 URL for fifth project is https://roadmap.sh/projects/testimonial-cards
 URL for sixth project is https://roadmap.sh/projects/datepicker-ui
 URL for seventh project is https://roadmap.sh/projects/accessible-form-ui
+URL for eighth project is https://roadmap.sh/projects/image-grid - Credit to Austin Hill's styles in helping me get through with this one
 
