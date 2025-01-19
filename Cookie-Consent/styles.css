@@ -788,15 +788,15 @@ li:hover::after {
 }
 
 .original {
-  transform: translateX(450px);
+  transform: translateX(400px);
 }
 .open {
-  transition: all 1s ease-in-out;
-  transform: translateX(-50px);
+  transition: all 2s ease-in-out;
+  transform: translateX(-10px);
   opacity: 1;
 }
 .close {
-  transition: all 1s ease-in-out;
+  transition: all s ease-in-out;
   transform: translateX(450px);
   opacity: 0;
 }

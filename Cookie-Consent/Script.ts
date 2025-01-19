@@ -6,12 +6,14 @@ let cookie: Boolean;
 
 let decoder: string[] = decodeURIComponent(document.cookie).split("=");
 console.log(decoder);
-if (decoder.length > 0)
+if (decoder.length > 0) {
   if (decoder[1] == "Yes" || decoder[1] == "No")
     cookieDiv?.classList.add("notAllowed");
   else cookieDiv?.classList.add("original");
+}
 
 window.onload = (): void => {
+  cookieDiv?.classList.add("original");
   cookieDiv?.classList.add("open");
 };
 
