@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Cookie&family=Dancing+Script:wght@400..700&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind components;
+@tailwind utilities;
+@tailwind base;
+
+li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  background-color: black;
+  width: 100%;
+  height: 1px;
+  transform: scale(0);
+  transform-origin: left;
+  transition: transform cubic-bezier(0.4, 0, 0.2, 1) 1s;
+}
+li:hover::after {
+  transform-origin: right;
+  transform: scale(1);
+}
