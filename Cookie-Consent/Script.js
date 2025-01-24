@@ -1,6 +1,8 @@
 "use strict";
 const cookieDiv = document.getElementById("cookie"), acceptBtn = document.getElementById("accept"), rejectBtn = document.getElementById("reject");
 let cookie;
+let date = new Date();
+date.setFullYear(date.getFullYear() + 2);
 let decoder = decodeURIComponent(document.cookie).split("=");
 console.log(decoder);
 if (decoder.length > 0) {
@@ -18,7 +20,7 @@ if (rejectBtn instanceof HTMLButtonElement) {
         if (cookieDiv instanceof HTMLDivElement)
             cookieDiv.classList.add("close");
         cookie = false;
-        document.cookie = `Accepted=${cookie ? "Yes" : "No"}; expires=Sun, 19 Jan 2025 15:19:00 EAT; path=/`;
+        document.cookie = `Accepted=${cookie ? "Yes" : "No"}; expires=${date.toLocaleDateString()}; path=/`;
     };
 }
 if (acceptBtn instanceof HTMLButtonElement) {
@@ -26,6 +28,6 @@ if (acceptBtn instanceof HTMLButtonElement) {
         if (cookieDiv instanceof HTMLDivElement)
             cookieDiv.classList.add("close");
         cookie = true;
-        document.cookie = `Accepted=${cookie ? "Yes" : "No"}; expires=Sun, 19 Jan 2025 15:19:00 EAT; path=/`;
+        document.cookie = `Accepted=${cookie ? "Yes" : "No"}; expires=${date.toLocaleDateString()}; path=/`;
     };
 }
