@@ -3,6 +3,8 @@ const cookieDiv: HTMLElement | null = document.getElementById("cookie"),
   rejectBtn: HTMLElement | null = document.getElementById("reject");
 
 let cookie: Boolean;
+let date: Date = new Date();
+date.setFullYear(date.getFullYear() + 2);
 
 let decoder: string[] = decodeURIComponent(document.cookie).split("=");
 console.log(decoder);
@@ -23,7 +25,7 @@ if (rejectBtn instanceof HTMLButtonElement) {
     cookie = false;
     document.cookie = `Accepted=${
       cookie ? "Yes" : "No"
-    }; expires=Sun, 19 Jan 2025 15:19:00 EAT; path=/`;
+    }; expires=${date.toLocaleDateString()}; path=/`;
   };
 }
 
@@ -33,6 +35,6 @@ if (acceptBtn instanceof HTMLButtonElement) {
     cookie = true;
     document.cookie = `Accepted=${
       cookie ? "Yes" : "No"
-    }; expires=Sun, 19 Jan 2025 15:19:00 EAT; path=/`;
+    }; expires=${date.toLocaleDateString()}; path=/`;
   };
 }
