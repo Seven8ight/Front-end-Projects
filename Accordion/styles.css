@@ -39,4 +39,13 @@ header h1 {
 }
 #container span button:hover {
   cursor: pointer;
+}
+
+#arrow {
+  transition: transform 0.5s linear;
+  transform: rotateX(180deg);
+}
+
+#arrow.rotate {
+  transform: rotateX(360deg);
 }/*# sourceMappingURL=styles.css.map */

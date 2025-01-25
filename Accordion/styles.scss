@@ -43,3 +43,11 @@ header {
     }
   }
 }
+
+#arrow {
+  transition: transform 0.5s linear;
+  transform: rotateX(180deg);
+}
+#arrow.rotate {
+  transform: rotateX(360deg);
+}
