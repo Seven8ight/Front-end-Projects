@@ -1,0 +1,38 @@
+:root {
+  --font: "Lobster Two", sans-serif;
+  --border: 1px inset black;
+}
+
+header h1 {
+  font-family: var(--font);
+  text-decoration: underline;
+  text-align: center;
+}
+
+#container {
+  border: var(--border);
+  padding: 10px;
+  border-radius: 20px;
+  margin: auto;
+  width: 500px;
+  position: relative;
+  top: 50px;
+}
+#container div section #inner {
+  padding: 5px;
+  height: 0px;
+  overflow: hidden;
+}
+#container span {
+  position: absolute;
+  right: 25px;
+}
+#container span button {
+  position: relative;
+  bottom: 32px;
+  border: none;
+  background: transparent;
+}
+#container span button:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=styles.css.map */

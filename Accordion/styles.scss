@@ -1,0 +1,40 @@
+:root {
+  --font: "Lobster Two", sans-serif;
+  --border: 1px inset black;
+}
+header {
+  h1 {
+    font-family: var(--font);
+    text-decoration: underline;
+    text-align: center;
+  }
+}
+#container {
+  border: var(--border);
+  padding: 10px;
+  border-radius: 20px;
+  margin: auto;
+  width: 500px;
+  position: relative;
+  top: 50px;
+
+  & div section #inner {
+    padding: 5px;
+    height: 0px;
+    overflow: hidden;
+  }
+  & span {
+    position: absolute;
+    right: 25px;
+
+    button {
+      position: relative;
+      bottom: 32px;
+      border: none;
+      background: transparent;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
