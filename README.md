@@ -10,3 +10,5 @@ URL for eighth project is https://roadmap.sh/projects/image-grid - Credit to Aus
 URL for ninth project is https://roadmap.sh/projects/tooltip-ui
 URL for tenth project is https://roadmap.sh/projects/simple-tabs --> went abit crazy on this project to use typescript and tailwindcss
 URL for Eleventh project is https://roadmap.sh/projects/cookie-consent --> used Typescript, tailwindcss  for this one as well. Abit sketchy on the tailwind but it worked.
+URL for twelveth project is https://roadmap.sh/projects/restricted-textarea --> Typescript and tailwindcss new version.
+URL for thirteenth project is https://roadmap.sh/projects/accordion --> Vanilla js and scss, working offline.
