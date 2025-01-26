@@ -38,5 +38,43 @@
         </ul>
       </div>
     </nav>
+
+    <section>
+      <p>The form below allows us get more in touch with you</p>
+    </section>
+
+    <div id="form">
+      <label for="name"> Name: </label>
+      <input
+        type="text"
+        required
+        id="name"
+        name="name"
+        placeholder="John Doe"
+      />
+      <br />
+      <label for="email">Email:</label>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        placeholder="name@example.com"
+        required
+      />
+
+      <div id="actual-dropdown">
+        <p id="text">Select a role</p>
+        <div id="options">
+          <button>Front end</button>
+          <button>Back end</button>
+          <button>Full stack</button>
+          <button>Data analyst</button>
+          <button>AI Engineer</button>
+          <button>Cyber Sec specialist</button>
+          <button>Other</button>
+        </div>
+      </div>
+      <button id="submit" type="submit">Submit</button>
+    </div>
   </body>
 </html>

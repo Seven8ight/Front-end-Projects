@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Asap:ital,wght@0,100..900;1,100..900&family=Cookie&family=Dancing+Script:wght@400..700&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 nav {
   width: 75%;
   height: 60px;
@@ -9,7 +10,9 @@ nav {
 }
 nav header h1 {
   font-family: "Oswald";
-  text-decoration: underline;
+  font-weight: lighter;
+  position: relative;
+  bottom: 5px;
 }
 nav div ul {
   display: flex;
@@ -19,14 +22,16 @@ nav div ul {
   position: relative;
   top: 10px;
   height: 20px;
+  font-family: "cookie", sans-serif;
+  font-size: large;
 }
 nav div ul li:hover {
   cursor: pointer;
 }
 nav div ul li span #arrow {
   position: relative;
-  bottom: 36.5px;
-  left: 63.5px;
+  bottom: 43px;
+  left: 50px;
   transform-origin: center;
   transition: transform 0.5s ease-in;
   transform: rotateX(180deg);
@@ -72,4 +77,102 @@ nav div ul #container ul li a {
   color: black;
   text-decoration: none;
   transition: padding 0.5s ease-in-out;
+}
+
+#actual-dropdown {
+  width: 250px;
+  margin: auto;
+  text-align: center;
+  font-family: "Cookie", sans-serif;
+}
+#actual-dropdown:hover {
+  cursor: pointer;
+}
+#actual-dropdown p {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 185px;
+  padding: 5px 0px;
+  position: relative;
+  left: 31.5px;
+}
+#actual-dropdown div {
+  width: 175px;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  border: transparent;
+  border-top-color: transparent;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin: auto;
+  position: relative;
+  bottom: 17.5px;
+  transition: all 0.5s ease-in-out;
+}
+#actual-dropdown div.drop {
+  height: 235px;
+  border: 1px solid black;
+  visibility: visible;
+}
+#actual-dropdown div button {
+  border-radius: 5px;
+  font-size: 13px;
+  background: transparent;
+  margin-bottom: 5px;
+  font-family: "Cookie", sans-serif;
+  font-size: large;
+}
+#actual-dropdown div button:hover {
+  cursor: pointer;
+}
+
+#form {
+  width: 300px;
+  height: auto;
+  padding: 15px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  top: 200px;
+  border-bottom: 1px solid black;
+}
+#form input {
+  font-family: "Dancing Script", sans-serif;
+  border: none;
+  border-bottom: 1px solid black;
+  text-align: center;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+#form label {
+  font-family: "Asap", sans-serif;
+  font-weight: lighter;
+}
+#form button[id=submit] {
+  padding: 10px;
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+  font-family: "Asap", sans-serif;
+  font-weight: lighter;
+  font-size: small;
+  background: transparent;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+#form button[id=submit]:hover {
+  cursor: pointer;
+  background-color: rgb(32, 29, 29);
+  color: white;
+}
+
+section p {
+  text-align: center;
+  position: relative;
+  top: 200px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: lighter;
 }/*# sourceMappingURL=styles.css.map */
