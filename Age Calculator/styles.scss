@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Asap:ital,wght@0,100..900;1,100..900&family=Cookie&family=Dancing+Script:wght@400..700&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+@import "./node_modules/js-datepicker/src/datepicker.scss";
+
+#datepicker {
+  text-align: center;
+  position: relative;
+  top: 300px;
+  border-bottom: 1px solid black;
+  width: 450px;
+  padding: 10px;
+  margin: 0 auto;
+
+  header h1 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: lighter;
+    font-size: medium;
+    text-decoration: underline;
+  }
+
+  div input {
+    border: none;
+    border-bottom: 1px solid black;
+    margin: 10px 10px 20px 10px;
+    text-align: center;
+    font-family: "Cookie", sans-serif;
+    font-size: 15px;
+
+    &::placeholder {
+      text-align: center;
+      font-family: "Dancing Script", sans-serif;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+  button {
+    font-family: "Asap Condensed", sans-serif;
+    font-weight: lighter;
+    padding: 5px;
+    border-radius: 7.5px;
+    width: 100px;
+    background-color: transparent;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+
+    &:hover {
+      background-color: grey;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}

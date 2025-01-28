@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:title" content="Age Calculator" />
+    <meta property="og::author" content="Lawrence Muchiri" />
+    <meta
+      property="og::description"
+      content="an age Calculator app using the luxon package module"
+    />
+    <meta
+      property="og::viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/9e14e23008.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="bundle.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <section id="datepicker">
+      <header>
+        <h1>Date Picker</h1>
+      </header>
+      <div>
+        <input id="date" name="date" type="text" placeholder="dd-mm-yyyy" />
+        <i id="calendar" class="fa-regular fa-calendar"> </i>
+      </div>
+      <div id="result"></div>
+      <button type="submit" id="submit">Submit</button>
+    </section>
+  </body>
+</html>
