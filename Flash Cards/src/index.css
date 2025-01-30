@@ -1,68 +1,152 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Asap:ital,wght@0,100..900;1,100..900&family=Chewy&family=Cookie&family=Dancing+Script:wght@400..700&family=Oswald:wght@200..700&family=Protest+Riot&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 body {
-  margin: 0;
+  background: linear-gradient(#f6d5f7, #fbe9d7);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+header h1 {
+  text-align: center;
+  font-family: "Dancing Script", sans-serif;
+  text-decoration: underline;
+  position: relative;
+  top: 120px;
+}
+
+#footer {
+  text-align: center;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: lighter;
+  border-bottom: 1px solid black;
+  width: 50%;
+  position: absolute;
+  top: 87vh;
+  left: 25%;
+}
+#footer p:last-of-type {
+  font-family: "Cookie", sans-serif;
+}
+
+#parent {
+  margin: auto;
+  width: 60%;
+  height: 500px;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: relative;
+  top: 120px;
+}
+#parent #bar {
+  width: 97.5%;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 7px;
+  margin: 10px auto 5px auto;
+  position: relative;
+}
+#parent #bar #highlighter {
+  position: absolute;
+  border-radius: 5px;
+  top: 0;
+  left: 0px;
+  height: 100%;
+  width: 1%;
+  background-color: #e9b7ce;
+  opacity: 0.5;
+  transition: width 0.5s ease-in-out;
+}
+#parent #bar p {
+  text-align: center;
+  font-family: "Asap", sans-serif;
+  font-weight: lighter;
+  font-size: small;
+  position: absolute;
+  left: 49%;
+  bottom: -6px;
+}
+#parent #bar2 {
+  width: 97.5%;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 7px;
+  margin: 10px auto 5px auto;
+  position: relative;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  top: 1.5%;
 }
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#parent #bar2::after {
+  background-color: transparent;
 }
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+#parent #bar2 button {
+  background: transparent;
+  border: none;
+  font-family: "Protest Riot", sans-serif;
+  font-weight: lighter;
+  color: rgb(62, 54, 54);
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+#parent #bar2 button:hover {
+  color: white;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
+#parent #bar2 button::after {
+  content: "";
+  background-color: rgb(53, 46, 46);
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+  z-index: -1;
+  transform: scale(0);
+  transform-origin: left;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+#parent #bar2 button:hover::after {
+  transform: scale(1);
+  transform-origin: right;
+  width: 100%;
+}
+#parent #bar2 button:first-of-type::after {
+  transform-origin: right;
+}
+#parent #bar2 button:nth-of-type(2)::after {
+  transform-origin: center;
+}
+#parent #bar2 button:last-of-type {
+  transform-origin: left;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+#questions {
+  width: 95%;
+  height: 75%;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: auto;
+  position: relative;
+  top: 5px;
+  padding: 10px;
 }
+#questions #qn {
+  text-align: center;
+  position: relative;
+  top: 40%;
+  font-family: "Chewy", sans-serif;
+  font-size: larger;
+  color: rgb(68, 68, 68);
+}
+#questions #ans {
+  text-align: center;
+  position: relative;
+  top: 40%;
+  font-family: "Chewy", sans-serif;
+  font-size: larger;
+  color: rgb(68, 68, 68);
+  top: 30%;
+}/*# sourceMappingURL=index.css.map */
