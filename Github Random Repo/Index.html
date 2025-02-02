@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og::title" content="Github Random Repo" />
+    <meta
+      property="og::description"
+      content="A project that returns a random repo from Github in regard to the language offered"
+    />
+    <meta property="og::author" content="David Lawrence" />
+    <meta
+      property="og::description"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <link rel="stylesheet" href="Styles.css" />
+    <script type="module" src="Script.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>GitHub Random Repo</h1>
+    </header>
+    <nav id="sidebar">
+      <div id="search">
+        <input
+          type="text"
+          id="searchInput"
+          name="search"
+          placeholder="Enter a language"
+        />
+      </div>
+      <div id="languages"></div>
+    </nav>
+    <div id="container">
+      <p id="emptyList">
+        No repositories listed, click on the languages in the <u>sidebar</u> to
+        open 3 random repos
+      </p>
+      <div id="error">
+        <h1>Error</h1>
+        <p>An error occured in fetching the repositories please try again</p>
+      </div>
+      <div id="loader">
+        <p>Loading...</p>
+      </div>
+      <hr />
+      <div id="repositories"></div>
+      <hr />
+    </div>
+  </body>
+</html>
