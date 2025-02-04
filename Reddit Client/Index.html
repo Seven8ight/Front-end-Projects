@@ -17,7 +17,54 @@
 
     <link rel="stylesheet" href="Styles.css" />
     <script src="Script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/9e14e23008.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>Reddit</h1>
+    </header>
+    <div id="alreadyPresent">
+      <p>
+        Duplicate found, the selected reddit is already present in the layout
+      </p>
+    </div>
+    <div id="modal">
+      <input
+        type="text"
+        id="subbreddit"
+        name="subbreddit"
+        placeholder="Enter subbreddit name"
+      />
+      <br />
+      <button id="search" type="submit">Search up</button>
+      <p id="text">Click outside to exit</p>
+    </div>
+    <div id="loading">
+      <p><u>Loading...</u></p>
+      <p>
+        Did you know, Reddit is founded in Medford, Massachusetts by Steve
+        Huffman and Alexis Ohanian. It raises $100k in seed funding from Y
+        Combinator.
+      </p>
+    </div>
+    <div id="error">
+      <h1>Error</h1>
+      <p>Could not fetch the requested sub reddits</p>
+      <button id="reload" type="button">Reload Page</button>
+      <p>Click outside to exit</p>
+    </div>
+    <div id="container">
+      <div id="no-reddits">
+        <p>No reddits added</p>
+        <button id="modalOpener" type="button">Add a subbreddit</button>
+      </div>
+      <div id="addMore">
+        <button><i class="fa-solid fa-plus"></i></button>
+      </div>
+    </div>
+  </body>
 </html>
