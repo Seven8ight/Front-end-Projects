@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 
-const qns = [
+type question = {
+  id: number;
+  qn: string;
+  ans: string;
+};
+
+type questions = question[];
+
+const qns: questions = [
   {
     id: 1,
     qn: "What is a callback?",
