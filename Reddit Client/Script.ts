@@ -29,8 +29,10 @@ const modal = document.querySelector("#modal") as HTMLDivElement,
   reddits: string[] = [];
 
 const modalHandler = (status: boolean): void => {
+  let scrollY = window.scrollY;
   if (status) {
     modal.classList.add("open");
+    modal.style.top = `${scrollY + window.innerHeight / 4 + 100}px`;
     containerDiv.classList.add("blur");
   } else {
     modal.classList.remove("open");
@@ -52,8 +54,10 @@ document.addEventListener("click", (event: MouseEvent) => {
     }
   }
 });
+
 //Fetching
 const redditClient = async (subreddit: string): Promise<any> => {
+  let success: boolean = true;
   try {
     loaderElement.classList.add("open");
     modalHandler(false);
@@ -61,20 +65,26 @@ const redditClient = async (subreddit: string): Promise<any> => {
     noRedditInfo.classList.add("close");
 
     let response = await fetch(`https://www.reddit.com/r/${subreddit}.json`);
+
     if (!response.ok) {
-      modalHandler(false);
+      modal.classList.remove("open");
+      success = false;
       noRedditInfo.classList.add("close");
       errorElement.classList.add("open");
+      containerDiv.classList.add("blur");
     }
 
     return await response.json();
   } catch (error) {
     errorElement.classList.add("open");
     noRedditInfo.classList.add("close");
-    modalHandler(false);
+    containerDiv.classList.add("blur");
+    modal.classList.remove("open");
     throw error;
   } finally {
-    modalHandler(false);
+    if (success) modalHandler(false);
+    else containerDiv.classList.add("blur");
+
     loaderElement.classList.remove("open");
   }
 };
@@ -100,20 +110,22 @@ const caller = async (subreddit: string): Promise<posts[]> => {
 const htmlGenerator = (redditHeader: string, response: posts[]) => {
   reddits.push(redditHeader);
   if (response) {
-    //Set inside cookie
-    document.cookie = `reddits=${reddits};expires=${new Date(
+    //Storing cookies
+    document.cookie = `reddits=${encodeURIComponent(
+      JSON.stringify(reddits)
+    )};expires=${new Date(
       new Date().getFullYear(),
       new Date().getMonth(),
       new Date().getDate() + 1
     ).toUTCString()};path=/`;
 
-    noRedditInfo.classList.add("close");
-    modalHandler(false);
-    addMoreDiv.classList.add("open");
-
     const redditGroup: HTMLDivElement = document.createElement("div"),
       redditGroupHeader: HTMLHeadElement = document.createElement("h1"),
       optionsElement: HTMLButtonElement = document.createElement("button");
+
+    noRedditInfo.classList.add("close");
+    modalHandler(false);
+    addMoreDiv.classList.add("open");
 
     redditGroup.id = `reddit_${redditHeader}`;
     redditGroupHeader.innerHTML = `r/${redditHeader}`;
@@ -124,10 +136,66 @@ const htmlGenerator = (redditHeader: string, response: posts[]) => {
         <button id='delete'>Delete</button>
       </div>
     `;
+
+    //Media queries
+    let checker = window.matchMedia("max-width:1000px");
+    if (checker) {
+    }
+
     optionsElement.addEventListener("click", () => {
       let tabsDiv = optionsElement.children[1] as HTMLDivElement;
       if (tabsDiv.classList.contains("open")) tabsDiv.classList.remove("open");
       else tabsDiv.classList.add("open");
+    });
+
+    let refreshBtn = optionsElement.children[1]
+        .children[0] as HTMLButtonElement,
+      deleteBtn = optionsElement.children[1].children[1] as HTMLButtonElement;
+
+    refreshBtn.addEventListener("click", (event: Event) => {
+      event.stopPropagation();
+      containerDiv.removeChild(redditGroup);
+      addMoreDiv.classList.remove("open");
+      loaderElement.classList.add("open");
+      containerDiv.classList.add("blur");
+      //Its an immediate response, hence simulated it to look as if its refreshing even thou its there
+      setTimeout(() => {
+        htmlGenerator(redditHeader, response);
+        loaderElement.classList.remove("open");
+        containerDiv.classList.remove("blur");
+      }, 1500);
+    });
+
+    deleteBtn.addEventListener("click", (event: Event) => {
+      event.stopPropagation();
+      let cookies = JSON.parse(
+        decodeURIComponent(document.cookie)
+          .split("; ")
+          .find((row) => row.startsWith("reddits="))
+          ?.split("=")[1] || "[]"
+      );
+
+      cookies = cookies.filter((r: string) => r !== redditHeader);
+
+      document.cookie = `reddits=${encodeURIComponent(
+        JSON.stringify(cookies)
+      )};expires=${new Date(
+        new Date().getFullYear(),
+        new Date().getMonth(),
+        new Date().getDate() + 1
+      ).toUTCString()};path=/`;
+
+      containerDiv.removeChild(redditGroup);
+      addMoreDiv.classList.remove("open");
+      let anyPresentReddits: boolean = false;
+
+      Array.from(containerDiv.children).forEach((element) => {
+        if (/^reddit_.+/.test(element.id)) {
+          anyPresentReddits = true;
+        }
+      });
+
+      if (!anyPresentReddits) noRedditInfo.classList.remove("close");
     });
 
     optionsElement.id = "options";
@@ -154,19 +222,20 @@ const htmlGenerator = (redditHeader: string, response: posts[]) => {
 };
 
 const cookieChecker = async (): Promise<void> => {
-  let redditsAvailable =
-    decodeURIComponent(document.cookie).length > 0
-      ? decodeURIComponent(document.cookie).split("=")[0].split(",")
-      : [];
-  console.log(redditsAvailable);
+  let decodedData = decodeURIComponent(document.cookie)
+    .split("; ")
+    .find((row) => row.startsWith("reddits="));
+
+  let redditsAvailable = decodedData
+    ? JSON.parse(decodedData.split("=")[1])
+    : [];
+
   if (redditsAvailable.length > 0) {
     console.log("They are present");
     redditsAvailable.forEach(async (reddit: string): Promise<void> => {
       try {
         let response = await caller(reddit);
-        if (response) {
-          htmlGenerator(reddit, response);
-        }
+        htmlGenerator(reddit, response);
       } catch (error) {
         console.error(error);
       }

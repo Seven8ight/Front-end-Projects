@@ -27,6 +27,16 @@
   top: 40%;
 }
 
+@mixin glassmorphism {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+}
+
 body {
   background: linear-gradient(to bottom left, #f1e1c2, #fcbc98);
   background-repeat: no-repeat;
@@ -87,20 +97,14 @@ header {
 
 #alreadyPresent {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 37.5%;
   font-family: var(--header-font);
   text-align: center;
   padding: 5px;
+  z-index: 999;
 
-  /* From https://css.glass */
-  background: rgba(255, 255, 255, 0);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.26);
-
+  @include glassmorphism();
   @include openAnimation(500px);
   &.open {
     transform: translateX(0);
@@ -114,10 +118,6 @@ header {
   grid-template-columns: repeat(3, 3fr);
   gap: 10px 15px;
 
-  &.blur {
-    filter: blur(2px);
-  }
-
   & div[id^="reddit"] {
     height: 85vh;
     overflow: scroll;
@@ -125,27 +125,20 @@ header {
     border-radius: 15px;
     scrollbar-width: 5px;
 
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.26);
+    @include glassmorphism();
   }
 
-  & div:not([id="no-reddits"]) {
+  & div:not([id="no-reddits"]),
+  & div:not([id^="add"]) {
     padding: 10px;
     & button[id="options"] {
       border: none;
       background: transparent;
       font-size: large;
       height: 0px;
-      color: black;
       position: relative;
       bottom: 55px;
-      left: 370px;
-      margin: 0;
+      left: 360px;
 
       & #tabs {
         width: 100px;
@@ -153,13 +146,13 @@ header {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        border: none;
-        padding: 5px;
+        padding: 10px;
         position: relative;
         right: 50px;
-        bottom: 10px;
-        border-radius: 5px;
 
+        z-index: 999;
+        background-color: rgba(241, 241, 241, 0.3);
+        border-radius: 10px;
         @include openAnimation(200px);
 
         &.open {
@@ -171,6 +164,10 @@ header {
           border-radius: 10px;
           background: transparent;
           font-family: var(--post-title);
+
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
 
@@ -208,6 +205,10 @@ header {
         }
       }
     }
+  }
+
+  &.blur {
+    filter: blur(2px);
   }
 }
 
@@ -271,7 +272,7 @@ header {
   width: 300px;
   height: 100px;
   padding: 20px;
-  border: 1px solid black;
+  border: 1px solid rgb(144, 143, 143);
   border-radius: 10px;
   box-shadow: 5px 5px 5px 0px white;
   text-align: center;
@@ -328,5 +329,37 @@ header {
     text-decoration: underline;
     font-family: var(--authors);
     font-size: medium;
+  }
+}
+
+@media (max-width: 1000px) {
+  #container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+
+    & div[id^="reddit_"] {
+      & button[id="options"] {
+        position: relative;
+        left: 325px;
+      }
+    }
+  }
+  #modal,
+  #loading,
+  #alreadyPresent {
+    position: absolute;
+    left: 30%;
+    @include openAnimation(100px);
+  }
+  #loading {
+    width: 400px;
+  }
+}
+
+@media (max-width: 425px) {
+  #container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
   }
 }

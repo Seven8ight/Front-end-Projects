@@ -84,11 +84,12 @@ header h1 {
 
 #alreadyPresent {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 37.5%;
   font-family: var(--header-font);
   text-align: center;
   padding: 5px;
+  z-index: 999;
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0);
   border-radius: 16px;
@@ -111,9 +112,6 @@ header h1 {
   grid-template-columns: repeat(3, 3fr);
   gap: 10px 15px;
 }
-#container.blur {
-  filter: blur(2px);
-}
 #container div[id^=reddit] {
   height: 85vh;
   overflow: scroll;
@@ -128,75 +126,79 @@ header h1 {
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.26);
 }
-#container div:not([id=no-reddits]) {
+#container div:not([id=no-reddits]), #container div:not([id^=add]) {
   padding: 10px;
 }
-#container div:not([id=no-reddits]) button[id=options] {
+#container div:not([id=no-reddits]) button[id=options], #container div:not([id^=add]) button[id=options] {
   border: none;
   background: transparent;
   font-size: large;
   height: 0px;
-  color: black;
   position: relative;
   bottom: 55px;
-  left: 370px;
-  margin: 0;
+  left: 360px;
 }
-#container div:not([id=no-reddits]) button[id=options] #tabs {
+#container div:not([id=no-reddits]) button[id=options] #tabs, #container div:not([id^=add]) button[id=options] #tabs {
   width: 100px;
   height: 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  border: none;
-  padding: 5px;
+  padding: 10px;
   position: relative;
   right: 50px;
-  bottom: 10px;
-  border-radius: 5px;
+  z-index: 999;
+  background-color: rgba(241, 241, 241, 0.3);
+  border-radius: 10px;
   transform: translateX(200px);
   opacity: 0;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
-#container div:not([id=no-reddits]) button[id=options] #tabs.open {
+#container div:not([id=no-reddits]) button[id=options] #tabs.open, #container div:not([id^=add]) button[id=options] #tabs.open {
   transform: translateX(0);
   opacity: 1;
 }
-#container div:not([id=no-reddits]) button[id=options] #tabs button {
+#container div:not([id=no-reddits]) button[id=options] #tabs button, #container div:not([id^=add]) button[id=options] #tabs button {
   border-radius: 10px;
   background: transparent;
   font-family: var(--post-title);
 }
-#container div:not([id=no-reddits]) button[id=options]:hover {
+#container div:not([id=no-reddits]) button[id=options] #tabs button:hover, #container div:not([id^=add]) button[id=options] #tabs button:hover {
   cursor: pointer;
 }
-#container div:not([id=no-reddits]) h1 {
+#container div:not([id=no-reddits]) button[id=options]:hover, #container div:not([id^=add]) button[id=options]:hover {
+  cursor: pointer;
+}
+#container div:not([id=no-reddits]) h1, #container div:not([id^=add]) h1 {
   font-family: var(--header-font);
   text-decoration: underline;
   margin-bottom: 30px;
 }
-#container div:not([id=no-reddits]) div {
+#container div:not([id=no-reddits]) div, #container div:not([id^=add]) div {
   border: 1px solid black;
   border-radius: 20px;
   padding: 10px;
   margin-bottom: 10px;
 }
-#container div:not([id=no-reddits]) div h2 {
+#container div:not([id=no-reddits]) div h2, #container div:not([id^=add]) div h2 {
   font-family: var(--post-title);
   font-weight: 300;
   text-decoration: underline;
 }
-#container div:not([id=no-reddits]) div p:first-of-type {
+#container div:not([id=no-reddits]) div p:first-of-type, #container div:not([id^=add]) div p:first-of-type {
   font-family: var(--authors);
 }
-#container div:not([id=no-reddits]) div p {
+#container div:not([id=no-reddits]) div p, #container div:not([id^=add]) div p {
   font-family: var(--vote-count);
 }
-#container div:not([id=no-reddits]) div p a {
+#container div:not([id=no-reddits]) div p a, #container div:not([id^=add]) div p a {
   color: grey;
 }
-#container div:not([id=no-reddits]) div p a:visited {
+#container div:not([id=no-reddits]) div p a:visited, #container div:not([id^=add]) div p a:visited {
   color: black;
+}
+#container.blur {
+  filter: blur(2px);
 }
 
 #no-reddits {
@@ -254,7 +256,7 @@ header h1 {
   width: 300px;
   height: 100px;
   padding: 20px;
-  border: 1px solid black;
+  border: 1px solid rgb(144, 143, 143);
   border-radius: 10px;
   box-shadow: 5px 5px 5px 0px white;
   text-align: center;
@@ -312,4 +314,34 @@ header h1 {
   text-decoration: underline;
   font-family: var(--authors);
   font-size: medium;
+}
+
+@media (max-width: 1000px) {
+  #container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+  }
+  #container div[id^=reddit_] button[id=options] {
+    position: relative;
+    left: 325px;
+  }
+  #modal,
+  #loading,
+  #alreadyPresent {
+    position: absolute;
+    left: 30%;
+    transform: translateX(100px);
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+  #loading {
+    width: 400px;
+  }
+}
+@media (max-width: 425px) {
+  #container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
 }/*# sourceMappingURL=Styles.css.map */
