@@ -101,10 +101,6 @@ const htmlGenerator = (redditHeader, response) => {
         <button id='delete'>Delete</button>
       </div>
     `;
-        //Media queries
-        let checker = window.matchMedia("max-width:1000px");
-        if (checker) {
-        }
         optionsElement.addEventListener("click", () => {
             let tabsDiv = optionsElement.children[1];
             if (tabsDiv.classList.contains("open"))

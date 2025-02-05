@@ -137,11 +137,6 @@ const htmlGenerator = (redditHeader: string, response: posts[]) => {
       </div>
     `;
 
-    //Media queries
-    let checker = window.matchMedia("max-width:1000px");
-    if (checker) {
-    }
-
     optionsElement.addEventListener("click", () => {
       let tabsDiv = optionsElement.children[1] as HTMLDivElement;
       if (tabsDiv.classList.contains("open")) tabsDiv.classList.remove("open");
