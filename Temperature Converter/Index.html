@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og::title" content="Task Tracker" />
+    <meta
+      property="og::description"
+      content="A task tracker built with html/css and typescript"
+    />
+    <meta property="og::author" content="David Lawrence" />
+    <meta
+      property="og::viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="Script.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <h1>Temperature Converter</h1>
+      </header>
+      <form>
+        <input
+          type="text"
+          id="input"
+          name="input"
+          placeholder="temp e.g. 35.6"
+        />
+        <select id="initial" aria-placeholder="Initial Unit">
+          <option value="default">Initial unit</option>
+          <option value="F">Farenheit</option>
+          <option value="C">Celcius</option>
+          <option value="K">Kelvin</option>
+        </select>
+        <select id="conversion">
+          <option value="default">Convert to</option>
+          <option value="F">Farenheit</option>
+          <option value="C">Celcius</option>
+          <option value="K">Kelvin</option>
+        </select>
+        <button type="submit" id="submit">Convert</button>
+      </form>
+      <p id="results">Conversion results are here</p>
+    </div>
+  </body>
+</html>
