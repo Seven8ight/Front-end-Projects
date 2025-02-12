@@ -38,7 +38,7 @@ const Timer = (): React.ReactNode => {
       if (pause == false) {
         setSeconds((seconds) => seconds - 1);
         if (seconds == 0) {
-          setSeconds((seconds) => (seconds = 59));
+          setSeconds(59);
           setMinutes((minutes) => minutes - 1);
         }
       }
