@@ -2,11 +2,7 @@ import { useQuote } from "./Hooks/useQuote";
 
 const Quote = (): React.ReactNode => {
   const [error, quote] = useQuote();
-  if (error) {
-    console.log("An error occured");
-  } else {
-    console.log(quote);
-  }
+
   return (
     <div id="quote">
       {error && <p> Error occured in fetching quote, Refresh the page</p>}

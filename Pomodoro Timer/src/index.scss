@@ -1,7 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cookie&family=Dancing+Script:wght@400..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Protest+Riot&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+@mixin glassmorphism {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.17);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 body {
-  background-color: #ffe2ec;
+  background-color: #c48693;
+}
+
+#header {
+  position: relative;
+  top: 25px;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  width: 50%;
+  height: 75px;
+  border-bottom: 1px solid black;
+
+  & h1 {
+    font-family: "Cookie";
+    text-decoration: underline;
+  }
+
+  & #settings {
+    position: relative;
+    top: 22.5px;
+
+    & button {
+      font-size: larger;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+  }
 }
 
 #tasks {
@@ -9,7 +48,7 @@ body {
   height: 40vh;
   position: relative;
   left: 100px;
-  top: 250px;
+  top: 200px;
   text-align: center;
   border-radius: 20px;
 
@@ -34,8 +73,9 @@ body {
       }
 
       &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
         text-align: center;
-        font-family: "Dancing Script", sans-serif;
+        font-family: "Lobster Two", sans-serif;
       }
     }
 
@@ -77,13 +117,7 @@ body {
     padding-bottom: 10px;
     font-family: "Lobster Two", sans-serif;
 
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.23);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.8px);
-    -webkit-backdrop-filter: blur(5.8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    @include glassmorphism();
 
     & div[id^="task-"] {
       border-bottom: 1px solid black;
@@ -120,8 +154,8 @@ body {
   position: absolute;
   border-radius: 5px;
   left: 50%;
-  top: 17.5%;
-  background-color: rgb(118, 112, 112);
+  top: 20%;
+  background-color: rgb(0, 0, 0);
 }
 
 #timer {
@@ -129,7 +163,7 @@ body {
   height: 250px;
   font-size: small;
   position: relative;
-  bottom: 130px;
+  bottom: 200px;
   left: 850px;
   padding: 10px;
   text-align: center;
@@ -169,33 +203,77 @@ body {
     }
   }
 
-  /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.12);
+  @include glassmorphism();
   border-radius: 50%;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5.8px);
-  -webkit-backdrop-filter: blur(5.8px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 #quote {
   position: absolute;
-  bottom: 5%;
+  bottom: 2.5%;
   left: 29%;
   width: 600px;
   font-size: small;
   font-family: "Lobster Two", sans-serif;
   text-align: center;
   padding: 5px;
-  /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  @include glassmorphism();
 
   & div p:last-of-type {
     text-decoration: underline;
+  }
+}
+
+#modal {
+  width: 300px;
+  text-align: center;
+  position: absolute;
+  right: 60px;
+  top: 200px;
+  padding: 15px;
+  z-index: 999;
+
+  @include glassmorphism();
+
+  & div {
+    & p {
+      font-family: "Lobster Two", sans-serif;
+    }
+    & input {
+      border: none;
+      border-bottom: 1px solid black;
+      background: transparent;
+      text-align: center;
+      caret-color: black;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        color: rgb(133, 99, 99);
+        text-align: center;
+      }
+    }
+  }
+  & button {
+    font-family: "Cookie";
+    margin-top: 10px;
+    border: 1px solid black !important;
+    border-radius: 15px;
+    padding: 10px;
+    width: 100px;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+
+    &:hover {
+      background-color: rgb(35, 31, 31) !important;
+      color: white;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  #divider {
+    transform: rotateX(90deg);
   }
 }
