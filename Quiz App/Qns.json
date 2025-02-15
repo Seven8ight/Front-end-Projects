@@ -1,0 +1,41 @@
+{
+  "Questions": [
+    {
+      "id": 1,
+      "qn": "What is the main component of the central nervous system",
+      "answ": [
+        "Brain",
+        "Spinal Cord",
+        "Large Intenstines",
+        "Liver",
+        "Thoracic Vertebrae"
+      ]
+    },
+    {
+      "id": 2,
+      "qn": "How many thoracic vertabrae does the human body",
+      "answ": ["32", "31", "33", "29", "more"]
+    },
+    {
+      "id": 3,
+      "qn": "Which part of the brain handles stability and movement",
+      "answ": [
+        "Cerebrum",
+        "Cerebellum",
+        "Temporal Lobe",
+        "Frontal lobe",
+        "Brainstem"
+      ]
+    },
+    {
+      "id": 4,
+      "qn": "Choose the correct juice necessarily used in the small intestines to digest sucrose",
+      "answ": ["Sucrase", "Bile juice", "none", "HCL acid", "urine"]
+    },
+    {
+      "id": 5,
+      "qn": "Which muscles or ligaments are used to hold onto bone joints",
+      "answ": ["Tendons", "Muscles", "Hinge", "Fat", "Glucose"]
+    }
+  ]
+}
