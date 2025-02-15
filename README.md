@@ -41,3 +41,5 @@ A repo constituting of folders storing roadmap.sh front end projects from start 
     URL for twenteeth project is https://roadmap.sh/projects/temperature-converter
 
     URL for twenty first project is https://roadmap.sh/projects/pomodoro-timer --> To add media responsiveness and cookie storage later
+
+    UURL for twenty second project is https://roadmap.sh/projects/quiz-app --> Vite-react-application
