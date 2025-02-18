@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og::title" content="Weather Application" />
+    <meta
+      property="og::description"
+      content="A roadmap project on creating an application to display weather information particularly of a certain region"
+    />
+    <meta property="og::author" content="David Lawrence" />
+    <meta
+      property="og:viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <link rel="stylesheet" href="Styles.css" />
+    <script src="./bundle.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/9e14e23008.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <nav id="sidebar">
+      <form>
+        <div id="searchInput">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="places" placeholder="Search for places ..." />
+        </div>
+      </form>
+      <div id="today">
+        <div id="brief">
+          <img src="./Icons/Sunny.svg" />
+          <div id="text">
+            <p>15°<sup>c</sup></p>
+            <p>Sunday, <span>16:00</span></p>
+          </div>
+        </div>
+        <div id="divider"></div>
+        <div id="location">
+          <div id="cloudy">
+            <i class="fa-solid fa-cloud"></i>
+            <p>Cloudiness</p>
+          </div>
+          <div id="rain">
+            <img src="./Icons/Rainy.svg" />
+            <p>Rain - 2%</p>
+          </div>
+          <div id="location-card">
+            <h2 id="currentArea">New York, USA</h2>
+            <img
+              src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
+            <div id="credit">
+              <a target="_blank"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div id="dashboard">
+      <div id="navbar">
+        <div id="timelines">
+          <div id="underliner"></div>
+          <button id="todayBtn">Today</button>
+          <button id="week">Week</button>
+        </div>
+        <div id="units">
+          <div id="unitbtns">
+            <button id="farenheit">F°</button>
+            <button id="celcius">C°</button>
+          </div>
+          <img src="./Icons/unnamed-2.png" id="profile" />
+        </div>
+      </div>
+      <div id="days"></div>
+      <div id="details">
+        <h1>Today's Highlights</h1>
+        <div id="cards">
+          <div id="card" class="uv">
+            <h3>UV index</h3>
+            <div>
+              <img src="./Icons/Sunny.svg" />
+              <p>
+                26.5<span> cd/m<sup>2</sup></span>
+              </p>
+            </div>
+          </div>
+          <div id="card" class="wind">
+            <h3>Wind Status</h3>
+            <div>
+              <p>5.76 <span>Km/h</span></p>
+              <div id="strength">
+                <img src="./Icons/windsock-svgrepo-com.svg" />
+                <p>WSW</p>
+              </div>
+            </div>
+          </div>
+          <div id="card" class="sunsetting">
+            <h3>Sunrise & Sunset</h3>
+            <div id="sunrise">
+              <img src="./Icons/sunrise-svgrepo-com.svg" />
+              <div>
+                <p>6:30 AM</p>
+              </div>
+            </div>
+            <div id="sunset">
+              <img src="./Icons/sunset-svgrepo-com.svg" />
+              <div>
+                <p>5:42 PM</p>
+              </div>
+            </div>
+          </div>
+          <div id="card" class="humidity">
+            <h3>Humidity</h3>
+            <div>
+              <p>12 <span>%</span></p>
+            </div>
+            <div id="RangeContainer">
+              <div id="position"></div>
+            </div>
+            <div id="condition">
+              <p>Normal 👍</p>
+            </div>
+          </div>
+          <div id="card" class="visibility">
+            <h3>Visibility</h3>
+            <div>
+              <p>5.2 <span>Km</span></p>
+            </div>
+            <div id="condition">
+              <p>Average 😑</p>
+            </div>
+          </div>
+          <div id="card" class="air-quality">
+            <h3>Pressure</h3>
+            <div>
+              <p>105</p>
+            </div>
+            <div id="RangeContainer">
+              <div id="position"></div>
+            </div>
+            <div id="condition">
+              <p>Unhealthy 👎</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="loading">
+      <p>Loading</p>
+    </div>
+    <div id="error">
+      <h1>Error</h1>
+      <p>Error occurred in fetching data.</p>
+      <button id="reloadBtn">Reload Page</button>
+    </div>
+    <div id="no-access">
+      <h1>Notice</h1>
+      <p>
+        This site requires your location. Your privacy remains, your location is
+        needed purely for weather accuracy reasons alone and no other purpose.
+      </p>
+      <button id="reloadBtn">Reload Page</button>
+    </div>
+  </body>
+</html>

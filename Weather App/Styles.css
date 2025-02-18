@@ -1,0 +1,572 @@
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --sidebar-color: "#E0E0E0";
+  --cards: "#FFF";
+  --dashboard-color: "F4F4F4";
+  --primary-text: "1E1E1E";
+  --secondary-text: "5F6368";
+  --highllight-text: "FFA500";
+  --button-font: "Inter", sans-serif;
+  --header-font: "Roboto", sans-serif;
+}
+
+#sidebar {
+  background-color: rgb(245, 245, 245);
+  position: fixed;
+  left: 0;
+  width: 300px;
+  height: 97vh;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 5px;
+}
+#sidebar form {
+  position: relative;
+  top: 25px;
+  display: flex;
+  justify-content: center;
+}
+#sidebar form #searchInput {
+  position: relative;
+}
+#sidebar form #searchInput input {
+  border: none;
+  background: transparent;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  left: 10px;
+  width: 200px;
+  caret-color: black;
+}
+#sidebar form #searchInput input:focus {
+  outline: none;
+}
+#sidebar form #searchInput input::-moz-placeholder {
+  font-family: "Poppins", sans-serif;
+  color: black;
+}
+#sidebar form #searchInput input::placeholder {
+  font-family: "Poppins", sans-serif;
+  color: black;
+}
+#sidebar form #searchResults {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: 225px;
+  height: 100px;
+  border-radius: 10px;
+  overflow: scroll;
+  z-index: 999;
+  display: none;
+}
+#sidebar form #searchResults.open {
+  display: block;
+}
+#sidebar form #searchResults button {
+  width: 200px;
+  display: block;
+  margin: auto;
+  margin-bottom: 5px;
+  border: 1px solid black;
+  background: transparent;
+  border-radius: 5px;
+  font-size: small;
+}
+#sidebar form #searchResults button:hover {
+  cursor: pointer;
+}
+#sidebar #brief {
+  position: relative;
+  top: 70px;
+}
+#sidebar #brief img {
+  display: block;
+  margin: auto;
+  width: 275px;
+  height: 275px;
+}
+#sidebar #brief #text {
+  position: relative;
+  left: 25px;
+  top: 30px;
+  width: 200px;
+  font-family: "Poppins", sans-serif;
+}
+#sidebar #brief #text p:first-of-type {
+  font-size: 75px;
+  margin: 0;
+}
+#sidebar #brief #text p:last-of-type span {
+  color: grey;
+}
+#sidebar #divider {
+  width: 250px;
+  height: 1px;
+  background-color: rgb(220, 220, 220);
+  position: relative;
+  top: 125px;
+  left: 22.5px;
+}
+#sidebar #location {
+  height: auto;
+  position: relative;
+  top: 140px;
+  line-height: 5px;
+  padding: 5px;
+}
+#sidebar #location div:not([id=location-card]) {
+  display: flex;
+  position: relative;
+  left: 20px;
+  top: 5px;
+  font-family: "Roboto", sans-serif;
+}
+#sidebar #location div:not([id=location-card]) p {
+  width: 200px;
+  font-size: small;
+  line-height: 20px;
+  margin-left: 10px;
+  margin-bottom: 7.5px;
+  position: relative;
+  bottom: 10px;
+}
+#sidebar #location div:not([id=location-card]) img {
+  width: 25px;
+  height: 25px;
+}
+#sidebar #location #location-card {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+#sidebar #location #location-card h2 {
+  position: absolute;
+  left: 37.5%;
+  bottom: 25%;
+  z-index: 999;
+  color: white;
+  font-family: "Cookie", sans-serif;
+  font-weight: 500;
+}
+#sidebar #location #location-card img {
+  width: 275px;
+  height: 120px;
+  border-radius: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  margin: auto;
+  position: relative;
+  bottom: 5px;
+}
+#sidebar #location #location-card #credit {
+  font-size: smaller;
+  font-family: "Cookie", sans-serif;
+  width: 85%;
+  height: 30px;
+  text-align: center;
+}
+#sidebar #location #location-card #credit a {
+  position: relative;
+  top: 2px;
+  left: 86px;
+  color: black;
+}
+
+#dashboard {
+  width: 76vw;
+  height: 97vh;
+  position: relative;
+  left: 320px;
+  background-color: rgb(239, 239, 239);
+  border-radius: 15px;
+  padding: 5px;
+}
+#dashboard #navbar {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 10px;
+  padding: 2px 10px 2px 10px;
+}
+#dashboard #navbar #timelines {
+  display: flex;
+  align-content: center;
+  width: 200px;
+  position: relative;
+  left: 30px;
+  justify-content: space-around;
+}
+#dashboard #navbar #timelines button {
+  border: none;
+  background: transparent;
+  font-family: var(--button-font);
+  font-size: large;
+  color: rgb(172, 172, 172);
+  transition: color 0.5s ease-in-out;
+}
+#dashboard #navbar #timelines button:hover {
+  cursor: pointer;
+}
+#dashboard #navbar #timelines button:hover {
+  color: grey;
+}
+#dashboard #navbar #timelines button.chosen {
+  color: black;
+}
+#dashboard #navbar #timelines button.chosen:hover {
+  color: black;
+}
+#dashboard #navbar #timelines #underliner {
+  width: 50px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  bottom: 7.5px;
+  left: 0px;
+  transform: translateX(126px);
+  transition: all 0.5s ease-in-out;
+}
+#dashboard #navbar #units {
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+}
+#dashboard #navbar #units #unitbtns {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  width: 85px;
+  position: relative;
+  top: 5px;
+}
+#dashboard #navbar #units #unitbtns button {
+  border: none;
+  background: transparent;
+  font-family: var(--button-font);
+  font-size: large;
+  background-color: rgb(229, 227, 227);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: small !important;
+  transition: all 0.5s ease-in-out;
+}
+#dashboard #navbar #units #unitbtns button:hover {
+  cursor: pointer;
+}
+#dashboard #navbar #units #unitbtns button:hover {
+  background-color: black;
+  color: white;
+}
+#dashboard #navbar #units #unitbtns button.chosen {
+  background-color: black;
+  color: white;
+}
+#dashboard #navbar #units img {
+  width: 50px;
+  height: 50x;
+  border-radius: 35%;
+}
+#dashboard #days {
+  position: relative;
+  top: 50px;
+  left: 10px;
+  width: 1050px;
+  height: auto;
+  border-radius: 15px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+  overflow: scroll;
+}
+#dashboard #days #day,
+#dashboard #days #hour {
+  width: 130px;
+  height: 200px;
+  border-radius: 10px;
+  background-color: white;
+}
+#dashboard #days #day #data h2,
+#dashboard #days #day #dataHours h2,
+#dashboard #days #hour #data h2,
+#dashboard #days #hour #dataHours h2 {
+  text-align: center;
+  font-family: "Cookie", sans-serif;
+  font-weight: 350;
+}
+#dashboard #days #day #data img,
+#dashboard #days #day #dataHours img,
+#dashboard #days #hour #data img,
+#dashboard #days #hour #dataHours img {
+  display: block;
+  margin: auto;
+  width: 65px;
+  height: 65px;
+}
+#dashboard #days #day #data #temp,
+#dashboard #days #day #data #tempHours,
+#dashboard #days #day #dataHours #temp,
+#dashboard #days #day #dataHours #tempHours,
+#dashboard #days #hour #data #temp,
+#dashboard #days #hour #data #tempHours,
+#dashboard #days #hour #dataHours #temp,
+#dashboard #days #hour #dataHours #tempHours {
+  display: block;
+  margin: auto;
+  width: 70px;
+  justify-content: space-around;
+  display: flex;
+  position: relative;
+  top: 10px;
+  font-family: "Roboto", sans-serif;
+}
+#dashboard #days #hour {
+  width: 250px !important;
+  margin-left: 20px;
+}
+#dashboard #hours {
+  overflow: hidden;
+}
+#dashboard #details {
+  position: relative;
+  top: 85px;
+  left: 75px;
+  width: 67vw;
+}
+#dashboard #details h1 {
+  position: relative;
+  font-family: "Inter";
+  font-weight: 250;
+}
+#dashboard #details #cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 65vw;
+  height: auto;
+  padding: 10px;
+}
+#dashboard #details #cards #card {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 12.5px;
+}
+#dashboard #details #cards #card h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  position: relative;
+  left: 20px;
+  color: grey;
+}
+#dashboard #details #cards .uv div {
+  width: 250px;
+  justify-content: space-around;
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  left: 20px;
+  top: 25px;
+}
+#dashboard #details #cards .uv div p {
+  font-size: large;
+}
+#dashboard #details #cards .uv div p span {
+  font-size: small;
+}
+#dashboard #details #cards .uv div img {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  bottom: 25px;
+}
+#dashboard #details #cards .wind {
+  font-family: "Poppins", sans-serif;
+}
+#dashboard #details #cards .wind div {
+  position: relative;
+  left: 30px;
+}
+#dashboard #details #cards .wind div p:first-of-type {
+  position: relative;
+  right: 0px;
+  font-size: 40px;
+}
+#dashboard #details #cards .wind div p:first-of-type span {
+  font-size: 15px;
+}
+#dashboard #details #cards .wind div #strength {
+  display: flex;
+  position: relative;
+  bottom: 30px;
+  left: -10px;
+  width: 200px;
+}
+#dashboard #details #cards .wind div #strength img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+#dashboard #details #cards .wind div #strength p {
+  font-size: 15px;
+}
+#dashboard #details #cards .sunsetting div {
+  display: flex;
+  position: relative;
+  left: 25px;
+  margin-bottom: 5px;
+}
+#dashboard #details #cards .sunsetting div div p {
+  font-family: "Poppins", sans-serif;
+}
+#dashboard #details #cards .sunsetting div img {
+  width: 50px;
+  height: 50px;
+}
+#dashboard #details #cards .humidity,
+#dashboard #details #cards .visibility,
+#dashboard #details #cards .air-quality {
+  font-family: "Roboto", sans-serif;
+}
+#dashboard #details #cards .humidity div:not([id=condition]),
+#dashboard #details #cards .visibility div:not([id=condition]),
+#dashboard #details #cards .air-quality div:not([id=condition]) {
+  position: relative;
+  left: 30px;
+  bottom: 15px;
+}
+#dashboard #details #cards .humidity div:not([id=condition]) p:first-of-type,
+#dashboard #details #cards .visibility div:not([id=condition]) p:first-of-type,
+#dashboard #details #cards .air-quality div:not([id=condition]) p:first-of-type {
+  position: relative;
+  font-size: 50px;
+}
+#dashboard #details #cards .humidity div:not([id=condition]) p:first-of-type span,
+#dashboard #details #cards .visibility div:not([id=condition]) p:first-of-type span,
+#dashboard #details #cards .air-quality div:not([id=condition]) p:first-of-type span {
+  font-size: 15px;
+}
+#dashboard #details #cards .humidity #RangeContainer,
+#dashboard #details #cards .visibility #RangeContainer,
+#dashboard #details #cards .air-quality #RangeContainer {
+  position: relative;
+  width: 30px;
+  height: 100px;
+  border: 1px solid rgba(113, 113, 113, 0.3);
+  left: 235px;
+  bottom: 140px;
+  border-radius: 25px;
+}
+#dashboard #details #cards .humidity #RangeContainer #position,
+#dashboard #details #cards .visibility #RangeContainer #position,
+#dashboard #details #cards .air-quality #RangeContainer #position {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  left: 5px;
+  bottom: 5%;
+}
+#dashboard #details #cards .humidity #condition,
+#dashboard #details #cards .visibility #condition,
+#dashboard #details #cards .air-quality #condition {
+  position: relative;
+  left: 30px;
+}
+#dashboard #details #cards .visibility #condition {
+  bottom: 35px;
+}
+#dashboard #details #cards .humidity #condition,
+#dashboard #details #cards .air-quality #condition {
+  bottom: 155px !important;
+}
+
+#loading {
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  font-family: "Cookie", sans-serif;
+  border: 1px solid black;
+  border-radius: 10px;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.8px);
+  -webkit-backdrop-filter: blur(5.8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+#loading.loading {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+#error,
+#no-access {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.8px);
+  -webkit-backdrop-filter: blur(5.8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 300px;
+  position: absolute;
+  left: 45%;
+  top: 40%;
+  box-shadow: 10px 10px 15px 0 rgba(255, 0, 0, 0.5);
+  border-radius: 15px;
+  text-align: center;
+  opacity: 0;
+  transform: translateX(200);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  pointer-events: none;
+}
+#error h1,
+#no-access h1 {
+  font-family: "Cookie", sans-serif;
+  text-decoration: underline;
+  font-weight: 400;
+}
+#error p,
+#no-access p {
+  font-family: "Cookie", sans-serif;
+}
+#error button,
+#no-access button {
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background: transparent;
+  font-family: "Roboto", sans-serif;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+#error button:hover,
+#no-access button:hover {
+  cursor: pointer;
+  background-color: rgb(88, 85, 85);
+  color: white;
+}
+#error.error,
+#no-access.error {
+  pointer-events: all;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#no-access {
+  width: 350px;
+}
+#no-access p {
+  font-family: "Roboto", sans-serif;
+}/*# sourceMappingURL=Styles.css.map */
