@@ -44,4 +44,4 @@ A repo constituting of folders storing roadmap.sh front end projects from start 
 
     URL for twenty second project is https://roadmap.sh/projects/quiz-app --> Vite-react-application
 
-    URL for twenty third project is https://roadmap.sh/projects/weather-app --> credit to https://dribbble.com/awsmd on the UI design implementation, animations to be added later
+    URL for twenty third project is https://roadmap.sh/projects/weather-app --> credit to https://dribbble.com/awsmd on the UI design implementation, animations to be added later. Requires one to get a pexel api key and visual crossing api-key for use in the application.
