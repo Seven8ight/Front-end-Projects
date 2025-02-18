@@ -537,7 +537,7 @@ const timelineHTMLGenerator = (
         visibilityStatus.innerHTML = `Not visible 👎`;
       else if (weather.currentConditions.visibility < 5)
         visibilityStatus.innerHTML = `Normal 👍`;
-      else visibilityStatus.innerHTML = `Ultra vision 🥵`;
+      else visibilityStatus.innerHTML = `Ultra vision 🤩`;
 
       pressureQualityValue.innerHTML = `${weather.currentConditions.pressure}`;
       if (weather.currentConditions.pressure < 35)
