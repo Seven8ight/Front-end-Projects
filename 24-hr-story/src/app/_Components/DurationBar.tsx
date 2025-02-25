@@ -2,8 +2,12 @@ import { useEffect, useRef } from "react";
 
 const DurationBar = (): React.ReactNode => {
   const ref = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    if (ref) ref.current?.classList.add("animate");
+    if (ref.current) {
+      ref.current.style.transition = "all 5s ease-in-out";
+      ref.current.style.transform = "scaleX(1)";
+    }
   }, []);
 
   return (

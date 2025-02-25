@@ -28,7 +28,3 @@ body {
   transition: all 5000ms ease-in-out;
   transform: scaleX(0);
 }
-#highlighter.animate {
-  transition: all 5000ms ease-in-out;
-  transform: scaleX(1);
-}
