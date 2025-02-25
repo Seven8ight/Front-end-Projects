@@ -191,7 +191,7 @@ const Page = (): React.ReactNode => {
               video.src = URL.createObjectURL(file);
 
               video.addEventListener("loadedmetadata", () => {
-                let duration = video.duration;
+                const duration = video.duration;
                 if (duration > 60) {
                   setLong(true);
                 } else {
@@ -293,7 +293,7 @@ const Page = (): React.ReactNode => {
     });
   }, [media]);
   useEffect(() => {
-    let timeout = setTimeout(() => {
+    const timeout = setTimeout(() => {
       setLong(false);
     }, 3000);
     return () => clearTimeout(timeout);
