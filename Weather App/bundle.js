@@ -12,7 +12,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const pexels_1 = require("pexels");
 //Fetching Data
-const pexelsKey = "private api key here", visualCrossing = "private api key here", pexels = (0, pexels_1.createClient)(pexelsKey), loaderElement = document.querySelector("#loading"), errorElement = document.querySelector("#error"), noAccessElement = document.querySelector("#no-access"), reloadBtn = document.querySelectorAll("#reloadBtn");
+const pexelsKey = "0tOAdsHjY29NMWloE9V2YQdbg017o4n2Fm7wHcw0hQ3R8hws2OeqL1lk", visualCrossing = "5CYLFE3XDEKDJR85WMN6NLEPU", pexels = (0, pexels_1.createClient)(pexelsKey), loaderElement = document.querySelector("#loading"), errorElement = document.querySelector("#error"), noAccessElement = document.querySelector("#no-access"), reloadBtn = document.querySelectorAll("#reloadBtn");
 let currentLocation, currentTimeChoice = "week", currentUnit = "C";
 reloadBtn.forEach((element) => element.addEventListener("click", () => window.location.reload()));
 const getPhotos = (query) => __awaiter(void 0, void 0, void 0, function* () {
