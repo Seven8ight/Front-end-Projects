@@ -35,14 +35,14 @@ const ModalElement = ({ items, index, handler }: Props): React.ReactNode => {
         intervalRef.current = setInterval(() => {
           if (Index + 1 === items.length) handler(false);
           else setIndex((current) => current + 1);
-        }, 5000);
+        }, duration);
       }
     };
 
     startInterval();
 
     return () => {
-      intervalRef.current && clearInterval(intervalRef.current);
+      if (intervalRef.current) clearInterval(intervalRef.current);
     };
   }, [Index, items, handler]);
 

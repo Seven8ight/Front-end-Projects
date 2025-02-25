@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, Dispatch, SetStateAction } from "react";
+import { useEffect, useState } from "react";
 import ErrorElement from "./@Components/Error";
 import { Cookie } from "next/font/google";
 import ModalElement from "./@Components/Modal";
