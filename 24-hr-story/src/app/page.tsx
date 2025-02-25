@@ -20,6 +20,7 @@ type Props = {
 
 const cookie = Cookie({
   weight: "400",
+  subsets: ["latin"],
 });
 
 const ErrorElement = (): React.ReactNode => {
