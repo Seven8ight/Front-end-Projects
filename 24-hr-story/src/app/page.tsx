@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
-import ErrorElement from "./@Components/Error";
+import ErrorElement from "./_Components/Error";
 import { Cookie } from "next/font/google";
-import ModalElement from "./@Components/Modal";
+import ModalElement from "./_Components/Modal";
 
 export type media = {
   id: number;
