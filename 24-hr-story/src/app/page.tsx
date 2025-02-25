@@ -183,11 +183,11 @@ const Page = (): React.ReactNode => {
     ): Promise<void> => {
       if (event.target.files) {
         Array.from(event.target.files).forEach((file) => {
-          let obj: Partial<media> = {};
+          const obj: Partial<media> = {};
 
           try {
             if (file.type.includes("video")) {
-              let video: HTMLVideoElement = document.createElement("video");
+              const video: HTMLVideoElement = document.createElement("video");
               video.src = URL.createObjectURL(file);
 
               video.addEventListener("loadedmetadata", () => {
@@ -218,7 +218,7 @@ const Page = (): React.ReactNode => {
                 }
               });
             } else {
-              let fileReader = new FileReader();
+              const fileReader = new FileReader();
 
               fileReader.onload = (event) => {
                 const base64String = event.target?.result;
@@ -328,12 +328,12 @@ const Page = (): React.ReactNode => {
           {media.length > 0 &&
             media.sort((file1, file2) => file1.id - file2.id) &&
             media.map((file) => {
-              let difference = Math.floor(
-                  (new Date().getTime() - new Date(file.date).getTime()) /
-                    1000 /
-                    60
-                ),
-                statement: string;
+              const difference = Math.floor(
+                (new Date().getTime() - new Date(file.date).getTime()) /
+                  1000 /
+                  60
+              );
+              let statement: string;
 
               if (difference < 60)
                 if (difference == 1) statement = `${difference} min ago`;
