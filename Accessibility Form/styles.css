@@ -1,123 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Cookie&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
-body{
-    background:linear-gradient(#f89999,#f6c0ba);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Cookie&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+form {
+  width: 32.5vw;
+  margin: auto;
+  margin-bottom: 1em;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 1px 0px 5px 0px rgb(200, 200, 200);
+  position: relative;
+  top: 25vh;
 }
-form{
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding:10px;
-    width:450px;
-    height:750px;
-    margin:0 auto;
-    position: relative;
-    top:15px;
+form header h1 {
+  margin-bottom: 1em;
 }
-form header h1{
-    text-align: center;
-    text-decoration: underline;
-    font:lighter 20px Oswald;
+form header h1,
+form header label,
+form div h1,
+form div label {
+  font-family: "Asap", sans-serif;
+  font-weight: 200;
 }
-form label{
-    font: lighter 15px "Asap";
+form div {
+  margin-bottom: 2.5em;
 }
-form input{
-    margin-left: 75px;
-    border:none;
-    background:transparent;
-    border-bottom:1px solid black;
-    width:350px;
-    text-align: center;
-    font:300 14px "Roboto Condensed";
-    color:black;
-} 
-form input::placeholder{
-    color: rgb(0,0,0,.5);
+form div label {
+  margin-left: 3.5em;
 }
-form input:focus{
-    border:2px solid black;
-    border-radius: 5px;
-    outline: none;
+form div button {
+  position: absolute;
+  right: 25px;
+  margin-top: 3px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
-form p{
-    font:lighter 14px "Asap"; 
+form div input {
+  padding: 5px;
+  position: absolute;
+  right: 60px;
+  width: 12.5vw;
 }
-#eye{
-    position: absolute;
-    right:30px;
-    background:transparent;
-    border:none;
-    font-size:17px;
-    margin-bottom: 20px;
+form div input::-moz-placeholder {
+  font-family: "Asap", sans-serif;
+  text-align: center;
 }
-#unequal{
-    text-align: center;
-    color: red;
-    font:600 12px "Roboto Condensed";
+form div input::placeholder {
+  font-family: "Asap", sans-serif;
+  text-align: center;
 }
-button[type="submit"]{
-    background:transparent;
-    border:none;
-    font:lighter 17px "Cookie";
-    text-align: center;
-    display: block;
-    margin:0 auto;
+form div input:focus {
+  outline: none;
 }
-button[type="submit"]:hover{
-    cursor: pointer;
-    text-decoration: underline;
-}
-#profile-completion{
-    border:1px solid black;
-    border-radius: 50%;
-    width:200px;
-    height:200px;
-    text-align: center;
-    margin:0 auto;
-    margin-top: 10px;
-}
-#profile-completion div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    width:160px;
-    height:160px;
-    margin:0 auto;
-    position: relative;
-    top:20px;
-    border-radius: 50%;
-    background: rgba(244,244,244,.5);
-}
-#checklist{
-    width:40%;
-    height:160px;
-    margin:0 auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-    border:1px solid black;
-    border-radius:10px;
-}
-
-@media (max-width:1000px){
-    form{
-        width:300px;
-        font-size:15px;
-    }
-    form input{
-        width:200px;
-    }
-    .eye-1{
-        top:195px;
-    }
-    .eye-2{
-        top:250px;
-    }
-}
+form button[type=submit] {
+  padding: 1em;
+  display: block;
+  margin: auto;
+  background: transparent;
+  border: none;
+  font-family: "Roboto Condensed", sans-serif;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 0px rgba(100, 100, 100, 0.5);
+  border-radius: 5px;
+  margin-top: 2em;
+}/*# sourceMappingURL=styles.css.map */

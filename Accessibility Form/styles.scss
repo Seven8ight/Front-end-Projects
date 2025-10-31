@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Cookie&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
+form {
+  width: 32.5vw;
+  margin: auto;
+  margin-bottom: 1em;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 1px 0px 5px 0px rgb(200, 200, 200);
+  position: relative;
+  top: 25vh;
+
+  header h1 {
+    margin-bottom: 1em;
+  }
+
+  header,
+  div {
+    h1,
+    label {
+      font-family: "Asap", sans-serif;
+      font-weight: 200;
+    }
+  }
+
+  div {
+    margin-bottom: 2.5em;
+
+    label {
+      margin-left: 3.5em;
+    }
+
+    button {
+      position: absolute;
+      right: 25px;
+      margin-top: 3px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    input {
+      padding: 5px;
+      position: absolute;
+      right: 60px;
+      width: 12.5vw;
+
+      &::placeholder {
+        font-family: "Asap", sans-serif;
+        text-align: center;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  button[type="submit"] {
+    padding: 1em;
+    display: block;
+    margin: auto;
+    background: transparent;
+    border: none;
+    font-family: "Roboto Condensed", sans-serif;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 0px rgba(100, 100, 100, 0.5);
+    border-radius: 5px;
+    margin-top: 2em;
+  }
+}
