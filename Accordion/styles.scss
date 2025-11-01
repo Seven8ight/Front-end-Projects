@@ -1,53 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
 :root {
-  --font: "Lobster Two", sans-serif;
+  --header-font: "Cookie", sans-serif;
+  --font: "Inter", sans-serif;
   --border: 1px inset black;
 }
-header {
-  h1 {
-    font-family: var(--font);
-    text-decoration: underline;
-    text-align: center;
-  }
-}
-#container {
-  border: var(--border);
-  padding: 10px;
-  border-radius: 20px;
+main {
+  width: 50vw;
   margin: auto;
-  width: 500px;
   position: relative;
-  top: 50px;
+  top: 22.5vh;
 
-  & div section #inner {
-    padding: 5px;
-    height: 0px;
-    overflow: hidden;
-    transition: height 0.5s ease-in-out;
-
-    &.open {
-      height: 100px;
+  header {
+    h1 {
+      font-family: var(--header-font);
+      text-decoration: underline;
     }
   }
-  & span {
-    position: absolute;
-    right: 25px;
 
-    button {
-      position: relative;
-      bottom: 32px;
-      border: none;
-      background: transparent;
-      &:hover {
-        cursor: pointer;
+  #container {
+    padding: 10px;
+    border-radius: 20px;
+    margin: auto;
+    width: 50vw;
+    font-family: var(--font);
+
+    & div {
+      box-shadow: 1px 0px 10px 0px rgba(225, 225, 225, 0.75);
+      border-radius: 10px;
+      padding: 5px;
+      margin-bottom: 1em;
+
+      section {
+        #head {
+          position: relative;
+          left: 20px;
+          top: 5px;
+          font-family: "Open Sans", sans-serif;
+        }
+
+        span {
+          position: absolute;
+          right: 25px;
+
+          button {
+            position: relative;
+            bottom: 32px;
+            border: none;
+            background: transparent;
+            transition: transform 0.5s linear;
+            transform: rotateX(0deg);
+            font-size: 17.5px;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            &.rotate {
+              transform: rotate(-45deg);
+            }
+          }
+        }
+
+        #inner {
+          padding: 0px;
+          padding-left: 30px !important;
+          box-shadow: none;
+          height: 0px;
+          overflow: hidden;
+          transition: height 0.5s ease-in-out;
+
+          & p {
+            font-family: "Roboto", sans-serif;
+            position: relative;
+            top: 15px;
+          }
+
+          &.open {
+            height: 100px;
+          }
+        }
       }
     }
   }
-}
-
-#arrow {
-  transition: transform 0.5s linear;
-  transform: rotateX(180deg);
-}
-#arrow.rotate {
-  transform: rotateX(360deg);
 }
